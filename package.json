@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "stress-test-gedi-ds",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,5 +11,13 @@
   },
   "dependencies": {
     "astro": "^3.3.2"
+  },
+  "devDependencies": {
+    "postcss-clean": "^1.2.2",
+    "postcss-import": "^15.1.0",
+    "postcss-mixins": "^9.0.4",
+    "postcss-preset-env": "^9.2.0",
+    "postcss-simple-vars": "^7.0.1",
+    "postcss-sort-media-queries": "^5.2.0"
   }
 }
