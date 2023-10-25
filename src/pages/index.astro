@@ -1,0 +1,28 @@
+---
+import Base from "../template/Base.astro";
+
+const indexData = [
+  {
+    name: "Homepage",
+    path: "/view/home",
+  },
+  {
+    name: "Detail",
+    path: "/view/detail",
+  },
+];
+---
+
+<Base title="Index">
+  <nav aria-label="primary">
+    <ul>
+      {
+        indexData.map((item) => (
+          <li>
+            <a href={item.path}>{item.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</Base>

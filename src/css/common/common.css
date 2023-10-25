@@ -1,15 +1,17 @@
-@import url(_partial.css);
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Common Start
+// ----------------------------------
+*/
 
-body {
-  background-color: #fafafa;
-  h1 {
-    color: red;
-    @media (--small-viewport) {
-      color: black;
-    }
-  }
+/* 1. Import reset */
+@import '_reset';
 
-  @media (--small-viewport) {
-    background-color: pink;
-  }
-}
+/* 1. Import partials */
+@import '_partial';
+
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Common Ends
+// ----------------------------------
+*/
