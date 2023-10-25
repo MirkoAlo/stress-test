@@ -4,6 +4,13 @@
 // ----------------------------------
 */
 
+$var: aqua;
+
 body {
-  background-color: red;
+    color: $var;
+}
+
+
+body {
+    background: red !important;
 }
