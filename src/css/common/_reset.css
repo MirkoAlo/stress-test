@@ -1,3 +1,9 @@
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Mini Reset
+// ----------------------------------
+*/
+
 html,
 body,
 div,
@@ -83,10 +89,10 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -100,25 +106,86 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
+
+::selection {
+  background: rgba(255, 235, 59, 0.5);
+}
+
+html {
+
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: geometricPrecision;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f2f6f9;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  transition: color 400ms ease-out;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: #003cbe;
+  }
+}
+
 ol,
 ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+
+button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+
+strong {
+  font-weight: 700;
+}
+
+details {
+  cursor: pointer;
+}
+
+summary {
+  list-style: none;
+
+  &::-webkit-details-marker,
+  &::marker {
+    display: none;
+  }
 }
