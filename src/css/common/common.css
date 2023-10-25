@@ -7,7 +7,7 @@
 /* 1. Import reset */
 @import '_reset';
 
-/* 1. Import partials */
+/* 2. Import partials */
 @import '_partial';
 
 /*
