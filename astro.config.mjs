@@ -39,7 +39,7 @@ export default defineConfig({
               console.log("dirName", dirName);
               return `${extType}/custom/${dirName}/${dirName}.[ext]`;
             } else {
-              dirName = assetInfo.name.split("-")[0].replace(".css", "");
+              dirName = assetInfo.name.replace('view-', '').replace(".css", "");
               return `${extType}/${dirName}/${dirName}.[ext]`;
             }
           },

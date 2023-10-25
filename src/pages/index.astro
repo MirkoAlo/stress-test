@@ -10,19 +10,43 @@ const indexData = [
     name: "Detail",
     path: "/view/detail",
   },
+  {
+    name: "Cronaca",
+    path: "/view/cronaca",
+  },
 ];
 ---
 
 <Base title="Index">
-  <nav aria-label="primary">
-    <ul>
-      {
-        indexData.map((item) => (
-          <li>
-            <a href={item.path}>{item.name}</a>
-          </li>
-        ))
+  <main class="gedi-index" role="main">
+    <nav class="gedi-index-list-nav" aria-label="primary">
+      <ul class="ged-index-list">
+        {
+          indexData.map((item) => (
+            <li class="gedi-index-list-item">
+              <a href={item.path}>{item.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <style>
+      .gedi-index {
+        padding: 5vh 5vw;
       }
-    </ul>
-  </nav>
+      .gedi-index-list-nav {
+        position: relative;
+      }
+      .ged-index-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .gedi-index-list-item {
+        & + & {
+          padding-top: 8px;
+        }
+      }
+    </style>
+  </main>
 </Base>
