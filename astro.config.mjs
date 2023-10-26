@@ -7,7 +7,7 @@ export default defineConfig({
     format: "file",
     cssMinify: false,
     inlineStylesheets: "never",
-    cssCodeSplit: true,
+    cssCodeSplit: true,    
   },
   vite: {
     build: {
@@ -45,6 +45,7 @@ export default defineConfig({
           },
         },
       },
+      assetsInlineLimit: 0
     },
   },
 });
