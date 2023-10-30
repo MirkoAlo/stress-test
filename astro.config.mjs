@@ -1,21 +1,25 @@
 import { defineConfig } from "astro/config";
 
+
 // https://astro.build/config
 export default defineConfig({
+
   compressHTML: false,
   build: {
     format: "file",
-    cssMinify: false,
-    inlineStylesheets: "never",
-    cssCodeSplit: true,    
+    inlineStylesheets: "always",
+    cssCodeSplit: true,
   },
   vite: {
     build: {
+      minify: false,
+      cssMinify: false,
       rollupOptions: {
         output: {
-          manualChunks: (id) => {
+          manualChunks: (id, { getModuleInfo, getModuleIds }) => {
             let lastPath = [id.split("/").length - 1];
             let fileName = id.split("/")[lastPath];
+
 
             if (id.match("custom") && id.includes("css")) {
               return `custom-${fileName}`;
@@ -24,10 +28,10 @@ export default defineConfig({
             if (id.match("common") && id.includes("css")) {
               return fileName.replace(".css", "");
             }
+
           },
           assetFileNames: (assetInfo) => {
             let extType = assetInfo.name.split(".").at(1);
-
             let dirName;
 
             if (assetInfo.name.includes("custom")) {
@@ -36,7 +40,6 @@ export default defineConfig({
                 assetInfo.name.lastIndexOf(".")
               );
 
-              console.log("dirName", dirName);
               return `${extType}/custom/${dirName}/${dirName}.[ext]`;
             } else {
               dirName = assetInfo.name.replace('view-', '').replace(".css", "");
