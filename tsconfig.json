@@ -1,3 +1,23 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  // Extends base Astro Config
+  "extends": "astro/tsconfigs/strict",
+  // Sets custom aliases for Astro 
+  // https: //docs.astro.build/en/guides/aliases/
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@css/*": [
+        "src/css/*"
+      ],
+      "@js/*": [
+        "src/js/*"
+      ],
+      "@page/*": [
+        "src/pages/*"
+      ],
+      "@template/*": [
+        "src/template/*"
+      ]
+    }
+  }
 }
