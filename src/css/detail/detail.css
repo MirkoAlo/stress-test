@@ -1,16 +1,20 @@
 /*
 // ----------------------------------
-// 🧑‍🚀 Gedi DS - Detail Custom CSS
+// 🧑‍🚀 Gedi DS - Home Custom CSS
 // ----------------------------------
 */
 
+
 $var: aqua;
+$var2: green;
 
 body {
-    color: $var;
+    color: $var2;
 }
 
 
 body {
-    background: red !important;
+    background: red;
 }
+
+
