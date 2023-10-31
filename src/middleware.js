@@ -55,8 +55,7 @@ export const onRequest = async (context, next) => {
     if (!context.url.pathname.includes('include')) {
         return new Response(
             response.text ?
-
-                getStyle(await response.text(), context)
+                process.env.NODE_ENV != 'development' ? getStyle(await response.text(), context) : await response.text()
                 : response.body, response
         )
     }
