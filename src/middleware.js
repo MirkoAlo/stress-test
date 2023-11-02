@@ -40,6 +40,7 @@ function getStyle(res, context) {
 
         let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`
         let response = res.replace(regexp, stylesheet)
+        return response
     } else {
         return response
     }
