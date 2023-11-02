@@ -15,37 +15,422 @@ const indexData = [
     path: "/view/cronaca",
   },
 ];
+
+const componentsData = [
+  {
+    name: "Accordion",
+    path: "",
+  },
+  {
+    name: "Avatar",
+    path: "",
+  },
+  {
+    name: "Avatar Group",
+    path: "",
+  },
+  {
+    name: "Badge",
+    path: "",
+  },
+  {
+    name: "Button",
+    path: "",
+  },
+  {
+    name: "Card",
+    path: "",
+  },
+];
 ---
 
 <Base title="Index">
-  <main class="gedi-index" role="main">
-    <nav class="gedi-index-list-nav" aria-label="primary">
-      <ul class="ged-index-list">
-        {
-          indexData.map((item) => (
-            <li class="gedi-index-list-item">
-              <a href={item.path}>{item.name}</a>
+  <div class="gedi-index">
+    <aside class="gedi-index-sidebar">
+      <nav class="gedi-index-list-nav" aria-label="primary">
+        <div class="gedi-index-list-logo">
+          <h1>Gedi Design System</h1>
+        </div>
+        <ul class="ged-index-list">
+          {
+            componentsData.map((item) => (
+              <li class="gedi-index-list-item">
+                <a href={item.path}>{item.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="gedi-index-main" role="main">
+      <div class="gedi-index-content">
+        <h1>Gedi Design System</h1>
+        <p>
+          I WebComponents sono i mattoni fondamentali di un sistema di
+          progettazione, costruiti per risolvere specifici problemi di
+          interfaccia utente. I web components ora sono ora più leggeri,
+          offrendo alle tue app web prestazioni migliorate e dimensioni del
+          bundle ridotte
+        </p>
+        <p>
+          Hai bisogno di prepararti prima? <br /> Dai un'occhiata alle guide per
+          <a href="/get-started/design">iniziare a progettare</a> e <a
+            href="/get-started/develop">iniziare a sviluppare</a
+          >.
+        </p>
+        <hr />
+        <h2 id="linkone">Primo link</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+          repellat in enim animi fugiat reiciendis alias veniam eligendi eaque
+          officiis, soluta dolorem nulla, quas odit laboriosam quasi,
+          repellendus distinctio ipsam?
+        </p>
+        <hr />
+        <h2 id="linktwo">Secondo link</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto
+          necessitatibus impedit, numquam quia omnis provident id nostrum
+          possimus harum sunt perferendis exercitationem enim asperiores saepe,
+          voluptatum quo, natus dignissimos voluptatibus?
+        </p>
+        <hr />
+        <h2 id="linkthree">Terzo link</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat,
+          molestiae maxime? Laudantium quod eveniet maiores impedit dolores
+          provident necessitatibus doloribus aspernatur molestias ad? Maxime
+          eveniet velit excepturi voluptates a odio!
+        </p>
+        <hr />
+        <h2 id="linkfour">Quarto link</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
+          consequuntur tempore! Optio maxime esse sit enim, iure non iusto
+          itaque accusantium fugiat sint fugit dolores, magnam ad alias sunt
+          repellat?
+        </p>
+        <hr />
+      </div>
+
+      <div class="gedi-index-toc">
+        <nav
+          class="table-of-contents toc--dynamic"
+          aria-label="Table of contents"
+        >
+          <strong class="gedi-index-tox-title title">Su questa pagina:</strong
+          ><ul class="list static" data-level="2">
+            <li class="item">
+              <a
+                class="active"
+                href="#linkone"
+                data-target="linkone"
+                title="Go to linkone">Primo link</a
+              >
+            </li><li class="item">
+              <a
+                class=""
+                href="#linktwo"
+                data-target="linktwo"
+                title="Go to linktwo">Secondo link</a
+              >
+            </li><li class="item">
+              <a
+                class=""
+                href="#linkthree"
+                data-target="linkthree"
+                title="Go to linkthree">Terzo link</a
+              >
+            </li><li class="item">
+              <a
+                class=""
+                href="#linkfour"
+                data-target="linkfour"
+                title="Go to linkfour">Quarto link</a
+              >
             </li>
-          ))
-        }
-      </ul>
-    </nav>
-    <style>
-      .gedi-index {
-        padding: 5vh 5vw;
-      }
-      .gedi-index-list-nav {
-        position: relative;
-      }
-      .ged-index-list {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .gedi-index-list-item {
-        position: relative;
-      }
-    </style>
-  </main>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </div>
 </Base>
+
+<style>
+  body {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 100%;
+    min-height: 100vh;
+    overscroll-behavior: none;
+  }
+  .gedi-index {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .gedi-index-sidebar {
+    position: fixed;
+    z-index: 2;
+    width: 375px;
+    top: 0;
+    bottom: 0;
+    left: calc(-1 * 375px);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: #fff;
+    backdrop-filter: blur(30px);
+    border-right: 1px solid #e0e0e0;
+
+    @media (min-width: 1140px) {
+      position: static;
+      flex: 0 0 375px;
+      max-width: 375px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .gedi-index-main {
+    display: flex;
+    justify-content: flex-start;
+    @media (min-width: 1140px) {
+      flex-grow: 1;
+      margin-top: 89px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 24px;
+      column-gap: 48px;
+    }
+  }
+
+  .gedi-index-content {
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 760px;
+
+    h1 {
+      font-size: 68px;
+      margin: 24px 0;
+      font-weight: 600;
+      line-height: 92px;
+      letter-spacing: -0.04em;
+      font-style: normal;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    h2 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+      margin: 40px 0 24px;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      margin: 0 0 40px;
+    }
+
+    p a {
+      text-decoration: underline;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: 0;
+      border-bottom: 1px solid #e0e0e0;
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
+  }
+
+  .gedi-index-toc {
+    flex: 0 0 240px;
+    @media (min-width: 1140px) {
+      display: block;
+    }
+  }
+
+  .gedi-index-tox-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    display: block;
+    margin: 0 0 24px 8px;
+    color: #424242;
+  }
+
+  .table-of-contents {
+    padding-left: 8px;
+    position: sticky;
+    top: 94px;
+  }
+
+  .table-of-contents a {
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    color: #424242;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -7px;
+      width: 3px;
+      border-radius: 1.5px;
+      height: 70%;
+      content: "";
+    }
+
+    &.active {
+      color: #242424;
+      font-weight: 600;
+      &:before {
+        background-color: #709dbf;
+      }
+    }
+  }
+
+  .gedi-index-list-logo {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e0e0e0;
+
+    h1 {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  .gedi-index-list-nav {
+    position: relative;
+  }
+
+  .ged-index-list {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .gedi-index-list-item {
+    position: relative;
+
+    a {
+      padding: 8px 32px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      color: #484644;
+
+      &:hover,
+      .active & {
+        background-color: #f2f6f9;
+        color: #09385c;
+      }
+      .active & {
+        font-weight: 600;
+      }
+    }
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    let hash;
+
+    const setActive = () => {
+      const id = hash.replace("#", "");
+      ul.querySelectorAll("a").forEach((link) =>
+        link.classList.remove("active")
+      );
+      const target = getLink(id);
+      target && target.classList.add("active");
+    };
+
+    const setHash = (newHash) => {
+      hash = newHash;
+      setActive();
+    };
+
+    const getLink = (id) => {
+      return ul.querySelector(`[data-target="${id}"]`);
+    };
+
+    const ul = document.querySelector(".gedi-index-toc ul.list");
+    const level = (ul && ul.dataset.level) || 2;
+    const headers = document.querySelectorAll(
+      ".gedi-index-content h" + level + "[id]"
+    );
+
+    if (!ul || !headers.length) {
+      return;
+    }
+
+    const options = {
+      rootMargin: "-70px 0% -60%",
+      threshold: 1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const id = entry.target.id;
+        if (entry.isIntersecting) {
+          setHash(id);
+          break;
+        }
+      }
+    }, options);
+
+    Array.from(headers).forEach((heading) => {
+      observer.observe(heading);
+    });
+  })();
+</script>

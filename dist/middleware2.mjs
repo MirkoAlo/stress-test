@@ -1,6 +1,7 @@
-import { fileURLToPath } from "url";
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+
 const __filename = fileURLToPath(import.meta.url);
-import path, { dirname } from "path";
 
 const __dirname = dirname(__filename);
 
@@ -24,28 +25,28 @@ function getStyle(res, context) {
     let extType = context.url.pathname.split(".").at(1);
     let fileName = context.url.pathname.split("/")[lastPath].replace(`.${extType}`, '');
 
-    let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g)
+    let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g);
 
     let pageStyle;
-    pageStyle = res.match(regexp)[0]
+    pageStyle = res.match(regexp)[0];
 
 
     let obj = {
         assetName: fileName.length != '0' ? fileName : 'index',
         style: pageStyle.replace('<style>', '').replace('</style>', '')
-    }
+    };
 
-    writeFile(obj)
+    writeFile(obj);
 
-    let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`
-    let response = res.replace(regexp, stylesheet)
+    let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`;
+    let response = res.replace(regexp, stylesheet);
 
     return response
 }
 
-export const onRequest = async (context, next) => {
+const onRequest = async (context, next) => {
     // aspetto il risultato
-    const response = await next()
+    const response = await next();
 
     if (!context.url.pathname.includes('include')) {
         return new Response(
@@ -61,3 +62,5 @@ export const onRequest = async (context, next) => {
             : response.body, response
     )
 };
+
+export { onRequest };
