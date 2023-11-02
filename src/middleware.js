@@ -4,9 +4,6 @@ import path, { dirname } from "path";
 
 const __dirname = dirname(__filename);
 
-
-
-
 function writeFile(obj) {
 
     let root = `${path.resolve(__dirname)}/css/`;
@@ -29,7 +26,6 @@ function getStyle(res, context) {
 
     let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g)
 
-
     let pageStyle;
     pageStyle = res.match(regexp)[0]
 
@@ -40,7 +36,6 @@ function getStyle(res, context) {
     }
 
     writeFile(obj)
-
 
     let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`
     let response = res.replace(regexp, stylesheet)

@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.3.2"
+    "astro": "^2.10.15"
   },
   "devDependencies": {
     "gd_ds_library": "^1.2.0",
-    "postcss-clean": "^1.2.2",
+    "postcss-clean": "^1.2.0",
     "postcss-import": "^15.1.0",
     "postcss-mixins": "^9.0.4",
     "postcss-preset-env": "^9.2.0",
