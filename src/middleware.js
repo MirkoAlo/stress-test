@@ -1,16 +1,28 @@
 import { fileURLToPath } from "url";
+import { JSDOM } from 'jsdom'
 const __filename = fileURLToPath(import.meta.url);
 import path, { dirname } from "path";
 
 const __dirname = dirname(__filename);
 
+
+
+
+
 function writeFile(obj) {
 
     let root = `${path.resolve(__dirname)}/css/`;
+    let assetNameRoot = `${root}/${obj.assetName}`;
+
 
     if (!fs.existsSync(root)) {    //check if folder already exists
         fs.mkdirSync(root);    //creating folder
     }
+
+    if (!fs.existsSync(root)) {    //check if folder already exists
+        fs.mkdirSync(root);    //creating folder
+    }
+
     fs.writeFileSync(`${root}/${obj.assetName}.css`, obj.style, 'utf-8', function (err) {
         if (err) throw err;
         console.log('filelistAsync complete');
@@ -19,6 +31,15 @@ function writeFile(obj) {
 
 function getStyle(res, context) {
 
+    const dom = new JSDOM(res);
+    const document = dom.window.document;
+
+
+    let pageStyleTag = document.querySelector('style');
+
+    let pageStyle = pageStyleTag.textContent
+
+    console.log()
 
     let lastPath = [context.url.pathname.split("/").length - 1];
     let extType = context.url.pathname.split(".").at(1);
@@ -26,24 +47,19 @@ function getStyle(res, context) {
 
     let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g)
 
-    if (res.match(regexp)[0]) {
-        let pageStyle;
-        pageStyle = res.match(regexp)[0]
 
-
-        let obj = {
-            assetName: fileName.length != '0' ? fileName : 'index',
-            style: pageStyle.replace('<style>', '').replace('</style>', '')
-        }
-
-        writeFile(obj)
-
-        let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`
-        let response = res.replace(regexp, stylesheet)
-        return response
-    } else {
-        return response
+    let obj = {
+        assetName: fileName.length != '0' ? fileName : 'index',
+        style: pageStyle
     }
+
+    writeFile(obj)
+
+    let styleRoot = `../css/${obj.assetName}/${obj.assetName}.css`
+
+    let stylesheet = `<link rel="stylesheet" type="text/css" href="${styleRoot}" />`
+
+    return res.replace(/<style\b[^<>]*>[\s\S]*?<\/style\s*>/gi, stylesheet)
 
 }
 
