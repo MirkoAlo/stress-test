@@ -26,21 +26,24 @@ function getStyle(res, context) {
 
     let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g)
 
-    let pageStyle;
-    pageStyle = res.match(regexp)[0]
+    if (res.match(regexp)[0]) {
+        let pageStyle;
+        pageStyle = res.match(regexp)[0]
 
 
-    let obj = {
-        assetName: fileName.length != '0' ? fileName : 'index',
-        style: pageStyle.replace('<style>', '').replace('</style>', '')
+        let obj = {
+            assetName: fileName.length != '0' ? fileName : 'index',
+            style: pageStyle.replace('<style>', '').replace('</style>', '')
+        }
+
+        writeFile(obj)
+
+        let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`
+        let response = res.replace(regexp, stylesheet)
+    } else {
+        return response
     }
 
-    writeFile(obj)
-
-    let stylesheet = `<link rel="stylesheet" type="text/css" href="../css/${obj.assetName}.css" />`
-    let response = res.replace(regexp, stylesheet)
-
-    return response
 }
 
 export const onRequest = async (context, next) => {
