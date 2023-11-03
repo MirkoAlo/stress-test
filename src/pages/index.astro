@@ -20,6 +20,7 @@ const componentsData = [
   {
     name: "Accordion",
     path: "",
+    status: "active",
   },
   {
     name: "Avatar",
@@ -55,7 +56,9 @@ const componentsData = [
           {
             componentsData.map((item) => (
               <li class="gedi-index-list-item">
-                <a href={item.path}>{item.name}</a>
+                <a class={item.status} href={item.path}>
+                  {item.name}
+                </a>
               </li>
             ))
           }
@@ -75,12 +78,24 @@ const componentsData = [
         </p>
         <p>
           Hai bisogno di prepararti prima? <br /> Dai un'occhiata alle guide per
-          <a href="/get-started/design">iniziare a progettare</a> e <a
-            href="/get-started/develop">iniziare a sviluppare</a
+          <a href="/design">iniziare a progettare</a> e <a href="/develop"
+            >iniziare a sviluppare</a
           >.
         </p>
         <hr />
-        <h2 id="linkone">Primo link</h2>
+        <h2 id="linkone">Primo contenuto</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+          repellat in enim animi fugiat reiciendis alias veniam eligendi eaque
+          officiis, soluta dolorem nulla, quas odit laboriosam quasi,
+          repellendus distinctio ipsam?
+        </p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
           culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
@@ -94,7 +109,19 @@ const componentsData = [
           repellendus distinctio ipsam?
         </p>
         <hr />
-        <h2 id="linktwo">Secondo link</h2>
+        <h2 id="linktwo">Secondo contenuto</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto
+          necessitatibus impedit, numquam quia omnis provident id nostrum
+          possimus harum sunt perferendis exercitationem enim asperiores saepe,
+          voluptatum quo, natus dignissimos voluptatibus?
+        </p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
           culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
@@ -108,7 +135,19 @@ const componentsData = [
           voluptatum quo, natus dignissimos voluptatibus?
         </p>
         <hr />
-        <h2 id="linkthree">Terzo link</h2>
+        <h2 id="linkthree">Terzo contenuto</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat,
+          molestiae maxime? Laudantium quod eveniet maiores impedit dolores
+          provident necessitatibus doloribus aspernatur molestias ad? Maxime
+          eveniet velit excepturi voluptates a odio!
+        </p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
           culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
@@ -122,7 +161,19 @@ const componentsData = [
           eveniet velit excepturi voluptates a odio!
         </p>
         <hr />
-        <h2 id="linkfour">Quarto link</h2>
+        <h2 id="linkfour">Quarto contenuto</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
+          culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
+          deserunt repellendus deleniti. Laudantium dolor quibusdam recusandae
+          ratione? Esse in voluptates soluta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
+          consequuntur tempore! Optio maxime esse sit enim, iure non iusto
+          itaque accusantium fugiat sint fugit dolores, magnam ad alias sunt
+          repellat?
+        </p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, sed
           culpa. Quasi assumenda, pariatur provident quas consequuntur beatae
@@ -150,28 +201,30 @@ const componentsData = [
                 class="active"
                 href="#linkone"
                 data-target="linkone"
-                title="Go to linkone">Primo link</a
+                title="Go to linkone">Primo contenuto</a
               >
             </li><li class="item">
               <a
                 class=""
                 href="#linktwo"
                 data-target="linktwo"
-                title="Go to linktwo">Secondo link</a
+                title="Go to linktwo">Secondo contenuto</a
               >
-            </li><li class="item">
+            </li>
+            <li class="item">
               <a
                 class=""
                 href="#linkthree"
                 data-target="linkthree"
-                title="Go to linkthree">Terzo link</a
+                title="Go to linkthree">Terzo contenuto</a
               >
-            </li><li class="item">
+            </li>
+            <li class="item">
               <a
                 class=""
                 href="#linkfour"
                 data-target="linkfour"
-                title="Go to linkfour">Quarto link</a
+                title="Go to linkfour">Quarto contenuto</a
               >
             </li>
           </ul>
@@ -202,7 +255,7 @@ const componentsData = [
     width: 375px;
     top: 0;
     bottom: 0;
-    left: calc(-1 * 375px);
+    /* left: calc(-1 * 375px); */
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 100vh;
     max-height: 100vh;
@@ -211,13 +264,13 @@ const componentsData = [
     backdrop-filter: blur(30px);
     border-right: 1px solid #e0e0e0;
 
-    @media (min-width: 1140px) {
+    /* @media (min-width: 1140px) {
       position: static;
       flex: 0 0 375px;
       max-width: 375px;
       width: 100%;
       height: auto;
-    }
+    } */
   }
 
   .gedi-index-main {
@@ -229,6 +282,7 @@ const componentsData = [
       border-top: 1px solid #e0e0e0;
       padding-top: 24px;
       column-gap: 48px;
+      padding-left: 375px;
     }
   }
 
@@ -282,7 +336,7 @@ const componentsData = [
   }
 
   .gedi-index-toc {
-    flex: 0 0 240px;
+    flex: 0 0 375px;
     @media (min-width: 1140px) {
       display: block;
     }
@@ -371,11 +425,11 @@ const componentsData = [
       color: #484644;
 
       &:hover,
-      .active & {
+      &.active {
         background-color: #f2f6f9;
         color: #09385c;
       }
-      .active & {
+      &.active {
         font-weight: 600;
       }
     }
