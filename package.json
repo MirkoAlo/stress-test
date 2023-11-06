@@ -10,9 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.10.15"
+    "astro": "^2.10.15",
+    "glob": "^10.3.10"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
     "gd_ds_library": "^1.2.0",
     "jsdom": "^22.1.0",
     "postcss-clean": "^1.2.0",
