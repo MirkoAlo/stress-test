@@ -1,81 +1,83 @@
 import { fileURLToPath } from "url";
 import { JSDOM } from 'jsdom';
-const __filename = fileURLToPath( import.meta.url );
+const __filename = fileURLToPath(import.meta.url);
 import path, { dirname } from "path";
+const __dirname = dirname(__filename);
 
-const __dirname = dirname( __filename );
 
-function writeFile ( obj ) {
+function writeFile(obj) {
 
-  let root = `${ path.resolve( __dirname ) }/css/`;
-  let assetNameRoot = `${ root }/${ obj.assetName }`;
+  let root = `${path.resolve(__dirname)}/css/`;
+  let assetNameRoot = `${root}/${obj.assetName}`;
 
-  if ( !fs.existsSync( root ) )
-  {    //check if folder already exists
-    fs.mkdirSync( root );    //creating folder
+  if (!fs.existsSync(root)) {    //check if folder already exists
+    fs.mkdirSync(root);    //creating folder
   }
 
-  if ( !fs.existsSync( assetNameRoot ) )
-  {    //check if folder already exists
-    fs.mkdirSync( assetNameRoot );    //creating folder
+  if (!fs.existsSync(assetNameRoot)) {
+    fs.mkdirSync(assetNameRoot);
   }
 
-  fs.writeFileSync( `${ assetNameRoot }/${ obj.assetName }.css`, obj.style, 'utf-8', function ( err ) {
-    if ( err ) throw err;
-    console.log( 'filelistAsync complete' );
-  } );
+  fs.writeFileSync(`${assetNameRoot}/${obj.assetName}.css`, obj.style, 'utf-8', function (err) {
+    if (err) throw err;
+    console.log('filelistAsync complete');
+  });
 }
 
-function getStyle ( res, context ) {
+function getStyle(response, context) {
 
-  const dom = new JSDOM( res );
+  const dom = new JSDOM(response);
   const document = dom.window.document;
 
 
-  let pageStyleTag = document.querySelector( 'style' );
+  let pageStyleTag = document.querySelector('style');
 
-  let pageStyle = pageStyleTag.textContent;
+  if (pageStyleTag) {
+    let pageStyle = pageStyleTag.textContent;
 
-  console.log();
+    let lastPath = [context.url.pathname.split("/").length - 1];
+    let extType = context.url.pathname.split(".").at(1);
+    let fileName = context.url.pathname.split("/")[lastPath].replace(`.${extType}`, '');
 
-  let lastPath = [ context.url.pathname.split( "/" ).length - 1 ];
-  let extType = context.url.pathname.split( "." ).at( 1 );
-  let fileName = context.url.pathname.split( "/" )[ lastPath ].replace( `.${ extType }`, '' );
-
-  let regexp = new RegExp( /<style[\w="'\s-]*>(.*?)<\/\s*style>/g );
+    let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g);
 
 
-  let obj = {
-    assetName: fileName.length != '0' ? fileName : 'index',
-    style: pageStyle
-  };
+    let obj = {
+      assetName: fileName.length != '0' ? fileName : 'index',
+      style: pageStyle
+    };
 
-  writeFile( obj );
+    writeFile(obj);
 
-  let styleRoot = `../css/${ obj.assetName }/${ obj.assetName }.css`;
+    let styleRoot = `../css/${obj.assetName}/${obj.assetName}.css`;
 
-  let stylesheet = `<link rel="stylesheet" type="text/css" href="${ styleRoot }" />`;
+    let stylesheet = `<link rel="stylesheet" type="text/css" href="${styleRoot}" />`;
 
-  return res.replace( /<style\b[^<>]*>[\s\S]*?<\/style\s*>/gi, stylesheet );
+    return response.replace(/<style\b[^<>]*>[\s\S]*?<\/style\s*>/gi, stylesheet);
+  } else {
+    return response
+  }
+
+
+
 
 }
 
-export const onRequest = async ( context, next ) => {
+export const onRequest = async (context, next) => {
   // aspetto il risultato
   const response = await next();
 
-  if ( !context.url.pathname.includes( 'include' ) )
-  {
+  if (!context.url.pathname.includes('include')) {
     return new Response(
       response.text ?
-        process.env.NODE_ENV != 'development' ? getStyle( await response.text(), context ) : await response.text()
+        process.env.NODE_ENV != 'development' ? getStyle(await response.text(), context) : await response.text()
         : response.body, response
     );
   }
 
   return new Response(
     response.text ?
-      ( await response.text() ).replace( '<!DOCTYPE html>', '' )
+      (await response.text()).replace('<!DOCTYPE html>', '')
       : response.body, response
   );
 };
