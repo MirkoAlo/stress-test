@@ -1,8 +1,15 @@
 import { fileURLToPath } from "url";
 import { JSDOM } from 'jsdom';
-const __filename = fileURLToPath(import.meta.url);
 import path, { dirname } from "path";
+import { getFileName } from '../src/utils/utils'
+
+// import ESI from 'esi'
+
+
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// console.log(ESI)
 
 
 function writeFile(obj) {
@@ -29,18 +36,14 @@ function getStyle(response, context) {
   const dom = new JSDOM(response);
   const document = dom.window.document;
 
-
   let pageStyleTag = document.querySelector('style');
 
   if (pageStyleTag) {
     let pageStyle = pageStyleTag.textContent;
 
-    let lastPath = [context.url.pathname.split("/").length - 1];
-    let extType = context.url.pathname.split(".").at(1);
-    let fileName = context.url.pathname.split("/")[lastPath].replace(`.${extType}`, '');
+    let fileName = getFileName(context.url.pathname)
 
     let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g);
-
 
     let obj = {
       assetName: fileName.length != '0' ? fileName : 'index',
@@ -57,10 +60,6 @@ function getStyle(response, context) {
   } else {
     return response
   }
-
-
-
-
 }
 
 export const onRequest = async (context, next) => {

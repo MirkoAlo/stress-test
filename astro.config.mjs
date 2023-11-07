@@ -1,7 +1,9 @@
 import { defineConfig } from "astro/config";
 import { babel } from '@rollup/plugin-babel';
 import glob from 'glob';
-import { fileURLToPath } from 'node:url';
+import path, { dirname } from "path";
+import { getFileName } from './src/utils/utils'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,16 +25,11 @@ export default defineConfig({
       rollupOptions: {
         output: {
           entryFileNames: chunkInfo => {
-
-            let entries = glob.sync('src/js/**/*.js').map(file => file)
-
+            let entries = glob.sync('src/js/**/*.js', { "ignore": ['**/**/modules/*.js'] }).map(file => path.resolve(file))
             chunkInfo.moduleIds.filter(element => {
               entries.map((item, i) => {
                 if (element.includes(item)) {
-                  let lastPath = [item.split("/").length - 1];
-                  let extType = item.split(".").at(1);
-                  let fileName = item.split("/")[lastPath].replace(`.${extType}`, '');
-                  chunkInfo.name = fileName
+                  chunkInfo.name = getFileName(item)
                 }
               })
             });
