@@ -1,5 +1,5 @@
 
-import { burger } from '@js/modules'
+import { burger } from '@js/modules/modules'
 
 const nav = () => {
     return 1
