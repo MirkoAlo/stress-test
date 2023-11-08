@@ -28,6 +28,7 @@ $ git clone https://github.com/MirkoAlo/stress-test/ && cd stress-test
 
 - [Astro](https://astro.build/)
 - [PostCSS](https://postcss.org)
+- [Babel](https://babeljs.io/)
 
 ## Directory structure
 
@@ -49,6 +50,9 @@ $ git clone https://github.com/MirkoAlo/stress-test/ && cd stress-test
     │   │   └─── _partial.css
     │   │   └─── _reset.css
     │   │   └─── common.css
+    │   │
+    │   ├───js
+    │   │   └─── **.js
     │   │
 
 ```
