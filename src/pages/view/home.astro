@@ -2,15 +2,19 @@
 import Base from "../../template/Base.astro";
 import Button from "../../components/Button.astro";
 import "../../css/home/home.css";
+import { getEsi } from "@utils/utils";
+
+const initBody =
+  "https://www.repstatic.it/cless/main/nazionale/2020-v1/include/home/init-body.html";
 ---
 
 <Base title="Homepage">
+  <Fragment set:html={getEsi(initBody)} />
   <Button className="secondary" label="test" />
 </Base>
 
 <script>
   import { home } from "@js/home/home";
   console.log(home());
-
   document.querySelector("button");
 </script>

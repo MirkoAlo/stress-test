@@ -3,13 +3,8 @@ import { JSDOM } from 'jsdom';
 import path, { dirname } from "path";
 import { getFileName } from '../src/utils/utils'
 
-// import ESI from 'esi'
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-// console.log(ESI)
 
 
 function writeFile(obj) {
@@ -37,6 +32,7 @@ function getStyle(response, context) {
   const document = dom.window.document;
 
   let pageStyleTag = document.querySelector('style');
+
 
   if (pageStyleTag) {
     let pageStyle = pageStyleTag.textContent;

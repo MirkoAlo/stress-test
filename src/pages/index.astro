@@ -437,54 +437,54 @@ const componentsData = [
 </style>
 
 <script is:inline>
-  (() => {
-    let hash;
+(() => {
+  let hash;
 
-    const setActive = () => {
-      const id = hash.replace("#", "");
-      ul.querySelectorAll("a").forEach((link) =>
-        link.classList.remove("active")
-      );
-      const target = getLink(id);
-      target && target.classList.add("active");
-    };
-
-    const setHash = (newHash) => {
-      hash = newHash;
-      setActive();
-    };
-
-    const getLink = (id) => {
-      return ul.querySelector(`[data-target="${id}"]`);
-    };
-
-    const ul = document.querySelector(".gedi-index-toc ul.list");
-    const level = (ul && ul.dataset.level) || 2;
-    const headers = document.querySelectorAll(
-      ".gedi-index-content h" + level + "[id]"
+  const setActive = () => {
+    const id = hash.replace("#", "");
+    ul.querySelectorAll("a").forEach((link) =>
+      link.classList.remove("active")
     );
+    const target = getLink(id);
+    target && target.classList.add("active");
+  };
 
-    if (!ul || !headers.length) {
-      return;
-    }
+  const setHash = (newHash) => {
+    hash = newHash;
+    setActive();
+  };
 
-    const options = {
-      rootMargin: "-70px 0% -60%",
-      threshold: 1,
-    };
+  const getLink = (id) => {
+    return ul.querySelector(`[data-target="${id}"]`);
+  };
 
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        const id = entry.target.id;
-        if (entry.isIntersecting) {
-          setHash(id);
-          break;
-        }
+  const ul = document.querySelector(".gedi-index-toc ul.list");
+  const level = (ul && ul.dataset.level) || 2;
+  const headers = document.querySelectorAll(
+    ".gedi-index-content h" + level + "[id]"
+  );
+
+  if (!ul || !headers.length) {
+    return;
+  }
+
+  const options = {
+    rootMargin: "-70px 0% -60%",
+    threshold: 1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      const id = entry.target.id;
+      if (entry.isIntersecting) {
+        setHash(id);
+        break;
       }
-    }, options);
+    }
+  }, options);
 
-    Array.from(headers).forEach((heading) => {
-      observer.observe(heading);
-    });
-  })();
+  Array.from(headers).forEach((heading) => {
+    observer.observe(heading);
+  });
+})();
 </script>
