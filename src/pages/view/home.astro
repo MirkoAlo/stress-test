@@ -1,20 +1,16 @@
 ---
-import Base from "../../template/Base.astro";
-import Button from "../../components/Button.astro";
-import "../../css/home/home.css";
-import { getEsi } from "@utils/utils";
+import Base from "@template/Base.astro";
+import "@css/home/home.css";
 
-const initBody =
-  "https://www.repstatic.it/cless/main/nazionale/2020-v1/include/home/init-body.html";
+import EsiInclude from "../../components/EsiInclude.astro";
 ---
 
 <Base title="Homepage">
-  <Fragment set:html={getEsi(initBody)} />
-  <Button className="secondary" label="test" />
-</Base>
+  <EsiInclude src="include/custom/economia/header/Header.astro" />
 
-<script>
-  import { home } from "@js/home/home";
-  console.log(home());
-  document.querySelector("button");
-</script>
+  <script>
+    import { home } from "@js/home/home";
+    console.log(home());
+    document.querySelector("button");
+  </script>
+</Base>
