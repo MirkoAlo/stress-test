@@ -18,6 +18,9 @@
       "@page/*": [
         "src/pages/*"
       ],
+      "@include/*": [
+        "src/pages/include/*"
+      ],
       "@template/*": [
         "src/template/*"
       ]

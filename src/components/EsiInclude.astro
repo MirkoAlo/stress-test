@@ -1,0 +1,32 @@
+---
+import { getEsi } from "@utils/*";
+
+const isDev = import.meta.env.DEV;
+
+const { src } = Astro.props;
+
+const posts = await Astro.glob("../pages/include/**/*.astro");
+
+const BASE = "https://www.repstatic.it/nazionale/2024/";
+---
+
+{
+  !src.includes("https:") ? (
+    isDev ? (
+      posts.map((component) =>
+        component.default.moduleId?.includes(src) ? <component.default /> : null
+      )
+    ) : (
+      <Fragment
+        set:html={`<esi:include src="${BASE}/${src.replace(
+          ".astro",
+          ".html"
+        )}" />`}
+      />
+    )
+  ) : (
+    <Fragment
+      set:html={isDev ? getEsi(src) : `<esi:include src="${BASE}/${src}" />`}
+    />
+  )
+}

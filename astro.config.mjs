@@ -11,7 +11,7 @@ export default defineConfig({
   compressHTML: false,
   output: 'static',
   build: {
-    assetsPrefix: 'https://www.repstatic.it/nazionale/2024/',
+    assetsPrefix: 'https://www.repstatic.it/nazionale/2024',
     format: "file",
     assets: 'js',
     inlineStylesheets: "always",
