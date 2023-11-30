@@ -1,15 +1,18 @@
 ---
 import Base from "@template/Base.astro";
+
 import "@css/detail/detail.css";
-import Button from "../../components/Button.astro";
+import EsiInclude from "@components/Esi/EsiInclude.astro";
 ---
 
 <Base title="Detail">
-  <Button className="primary" label="test" />
+  <EsiInclude
+    src="https://www.repstatic.it/cless/main/common/component/header-footer/2020-v1/include/economia/header.html"
+  />
 </Base>
+
 <script>
   import { sidebar, nav } from "@js/detail/detail";
   console.log(nav());
   console.log(sidebar());
-  document.querySelector("button");
 </script>

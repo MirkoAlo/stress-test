@@ -1,1 +1,476 @@
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font-family:inherit;font-size:100%;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}*,:after,:before{box-sizing:inherit}::-moz-selection{background:rgba(255,235,59,.5)}::selection{background:rgba(255,235,59,.5)}html{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;box-sizing:border-box;overflow-x:hidden;scroll-behavior:smooth;scrollbar-gutter:stable;text-rendering:geometricPrecision}body{background-color:#f2f6f9;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Oxygen,Open Sans,Helvetica Neue;font-size:16px;line-height:1.6;margin:0}a{color:currentColor;-webkit-text-decoration:none;text-decoration:none;transform:translateZ(0);transition:color .4s ease-out;will-change:transform,opacity}a:focus,a:hover,a:visited{color:#003cbe}ol,ul{list-style:none;margin:0;padding:0}h1,h2,h3,h4{font-weight:700}button{cursor:pointer;margin:0;padding:0}strong{font-weight:700}details{cursor:pointer}summary{list-style:none}summary::-webkit-details-marker,summary::marker{display:none}body{display:flex;flex-direction:column;justify-content:stretch;min-height:100vh;overscroll-behavior:none;position:relative;width:100%}.gedi-index:where(.astro-J7PV25F6){align-items:stretch;display:flex;justify-content:flex-start}.gedi-index-sidebar:where(.astro-J7PV25F6){-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);background-color:#fff;border-right:1px solid #e0e0e0;bottom:0;max-height:100vh;min-height:100vh;overflow-y:auto;position:fixed;top:0;transition:left .3s cubic-bezier(.4,0,.2,1);width:375px;z-index:2}.gedi-index-main:where(.astro-J7PV25F6){display:flex;justify-content:flex-start}.gedi-index-content:where(.astro-J7PV25F6){flex-grow:1;margin-left:auto;margin-right:auto;max-width:760px;width:100%}.gedi-index-content:where(.astro-J7PV25F6) h1:where(.astro-J7PV25F6){font-size:68px;font-style:normal;font-weight:600;letter-spacing:-.04em;line-height:92px;margin:24px 0}.gedi-index-content:where(.astro-J7PV25F6) h1:where(.astro-J7PV25F6):first-child{margin-top:0}.gedi-index-content:where(.astro-J7PV25F6) h2:where(.astro-J7PV25F6){font-size:32px;font-style:normal;font-weight:600;line-height:40px;margin:40px 0 24px}.gedi-index-content:where(.astro-J7PV25F6) p:where(.astro-J7PV25F6){font-size:20px;font-style:normal;font-weight:400;line-height:28px;margin:0 0 40px}.gedi-index-content:where(.astro-J7PV25F6) p:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6){-webkit-text-decoration:underline;text-decoration:underline}.gedi-index-content:where(.astro-J7PV25F6) hr:where(.astro-J7PV25F6){border:0;border-bottom:1px solid #e0e0e0;box-sizing:content-box;height:0;margin:40px 0;overflow:visible}.gedi-index-toc:where(.astro-J7PV25F6){flex:0 0 375px}.gedi-index-tox-title:where(.astro-J7PV25F6){color:#424242;display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:19px;margin:0 0 24px 8px}.table-of-contents:where(.astro-J7PV25F6){padding-left:8px;position:sticky;top:94px}.table-of-contents:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6){border-radius:8px;color:#424242;display:flex;font-size:14px;font-style:normal;font-weight:400;line-height:20px;padding:6px 8px;position:relative}.table-of-contents:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6):before{border-radius:1.5px;content:"";height:70%;left:-7px;position:absolute;top:50%;transform:translateY(-50%);width:3px}.table-of-contents:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6).active{color:#242424;font-weight:600}.table-of-contents:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6).active:before{background-color:#709dbf}.gedi-index-list-logo:where(.astro-J7PV25F6){border-bottom:1px solid #e0e0e0;padding-bottom:32px;padding-top:32px}.gedi-index-list-logo:where(.astro-J7PV25F6) h1:where(.astro-J7PV25F6){padding-left:32px;padding-right:32px}.gedi-index-list-nav:where(.astro-J7PV25F6){position:relative}.ged-index-list:where(.astro-J7PV25F6){display:flex;flex-direction:column;flex-wrap:wrap;gap:8px;margin-top:24px;padding-left:24px;padding-right:24px}.gedi-index-list-item:where(.astro-J7PV25F6){position:relative}.gedi-index-list-item:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6){border-radius:8px;color:#484644;display:flex;justify-content:space-between;padding:8px 32px}.gedi-index-list-item:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6).active,.gedi-index-list-item:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6):hover{background-color:#f2f6f9;color:#09385c}.gedi-index-list-item:where(.astro-J7PV25F6) a:where(.astro-J7PV25F6).active{font-weight:600}@media (min-width:1140px){.gedi-index-main:where(.astro-J7PV25F6){border-top:1px solid #e0e0e0;-moz-column-gap:48px;column-gap:48px;flex-grow:1;margin-top:89px;padding-left:375px;padding-top:24px}.gedi-index-toc:where(.astro-J7PV25F6){display:block}}
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Common Start
+// ----------------------------------
+*/
+
+/* 1. Import reset */
+
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Mini Reset
+// ----------------------------------
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+::-moz-selection {
+  background: rgba(255, 235, 59, 0.5);
+}
+
+::selection {
+  background: rgba(255, 235, 59, 0.5);
+}
+
+html {
+
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: geometricPrecision;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f2f6f9;
+}
+
+a {
+  color: currentColor;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  transition: color 400ms ease-out;
+}
+
+a:hover,
+  a:focus,
+  a:visited {
+    color: #003cbe;
+  }
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+strong {
+  font-weight: 700;
+}
+
+details {
+  cursor: pointer;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker,
+  summary::marker {
+    display: none;
+  }
+
+/* 2. Import partials */
+
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Partials (configs)
+// ----------------------------------
+*/
+
+/* 3. Import slim-header */
+
+.rep-slim-header {
+    position: sticky;
+    top: 0;
+    text-transform: uppercase;
+    z-index: 100000;
+    border-bottom: 1px #e9e9ee solid;
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #fff;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.rep-slim-header a{color:inherit}
+
+.rep-slim-header a:hover{color:#4b88ca}
+
+.rep-slim-header__notification-button[hidden]{visibility:hidden;display:block}
+
+#repNetworkNav,
+#repSearchForm{display:none}
+
+.rep-slim-header__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 16px;
+    background: #f9f9f9;
+    border-top: 1px #e9e9ee solid;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.rep-left-nav button, .rep-slim-header button {
+    background: 0 0;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.rep-slim-header__notification-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.rep-left-nav a, .rep-page-footer a, .rep-page-header a, .rep-page-header-nav a, .rep-slim-header a {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rep-slim-header__top .r-premium-logo {
+    width: 22px;
+    height: 22px;
+}
+
+.rep-page-footer-content, .rep-page-header-nav, .rep-page-header__content, .rep-slim-header__content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rep-slim-header__left, .rep-slim-header__right {
+    display: flex;
+    align-items: center;
+}
+
+.rep-slim-header__left, .rep-slim-header__right {
+    flex: 1;
+}
+
+.rep-slim-header button {
+    font-size: 12px;
+}
+
+.rep-left-nav button, .rep-slim-header button {
+    background: 0 0;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.rep-slim-header__menu-button svg {
+    width: 18px;
+    height: 16px;
+}
+
+.rep-left-nav a>span, .rep-left-nav button>*, .rep-page-footer a>span, .rep-page-footer button>*, .rep-page-header a>span, .rep-page-header button>*, .rep-page-header-nav a>span, .rep-page-header-nav button>*, .rep-slim-header a>span, .rep-slim-header button>* {
+    pointer-events: none;
+}
+
+.rep-slim-header button {
+    font-size: 12px;
+}
+
+.rep-slim-header__item:last-child {
+    padding-right: 0;
+}
+
+.rep-slim-header__center {
+    text-align: center;
+}
+
+.rep-slim-header__right {
+    justify-content: flex-end;
+}
+
+.rep-slim-header__left, .rep-slim-header__right {
+    display: flex;
+    align-items: center;
+}
+
+.rep-slim-header__search-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.rep-left-nav svg, .rep-page-footer svg, .rep-page-header svg, .rep-page-header-nav svg, .rep-slim-header svg {
+    vertical-align: middle;
+}
+
+.rep-slim-header__logo {
+    margin: 0;
+}
+
+.rep-slim-header .repubblica-logo {
+    width: 138px;
+    height: 28px;
+}
+
+.rep-slim-header__item--subscribe {
+    padding: 17px 16px!important;
+    color: #fff!important;
+}
+
+.rep-slim-header__item--subscribe {
+    background-color: #4b88ca;
+}
+
+.rep-slim-header__item {
+    position: relative;
+    text-transform: uppercase;
+}
+
+.rep-slim-header__item {
+    position: relative;
+    text-transform: uppercase;
+}
+
+.rep-slim-header__right .r-premium-logo {
+    width: 20px;
+    height: 20px;
+    margin: -5px 3px -5px 0;
+}
+
+.rep-slim-header__user {
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: .4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.rep-slim-header__user #account-data-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+}
+
+.rep-slim-header__user .header-logged-label, .rep-slim-header__user .header-login-label {
+    display: inline-block;
+    margin-right: 5px;
+    display: none;
+}
+
+.rep-slim-header .social-icon-user {
+    width: 24px;
+    height: 24px;
+}
+
+.rep-slim-header__content {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.rep-slim-header__search {
+    margin: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.rep-slim-header__search input[type=search] {
+    font-size: 16px;
+    color: #4d4d4d;
+    background: #fff;
+    height: 48px;
+    width: 100%;
+    padding: 6px 12px;
+    padding-right: 45px;
+    border-radius: 3px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 1px #e9e9ee solid;
+    box-sizing: inherit;
+}
+
+.rep-slim-header__search button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.rep-left-nav button, .rep-slim-header button {
+    background: 0 0;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.rep-slim-header__search svg {
+    height: 18px;
+    width: 18px;
+}
+
+.rep-slim-header__search__close-button svg {
+    height: 16px;
+    width: 16px;
+}
+
+/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Common Ends
+// ----------------------------------
+*/
+
+@media screen and (max-width: 767px) {
+    .rep-slim-header__user #account-data-container {
+        padding: 10px 16px;
+        width: 56px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width:767px) {
+.hide-on-mobile{display:none!important}
+.rep-slim-header__menu-button{padding:10px 16px}
+.rep-slim-header__user #account-data-container{padding:10px 16px;width:56px;height:44px}
+.rep-slim-header__user .header-logged-link{right:0;left:auto;width:100px}
+}

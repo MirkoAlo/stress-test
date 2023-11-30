@@ -1,1 +1,1 @@
-var o=function(){return 1},e=function(){return 3};console.log(o());console.log(e());document.querySelector("button");
+var o=function(){return 1},r=function(){return 3};console.log(o());console.log(r());
