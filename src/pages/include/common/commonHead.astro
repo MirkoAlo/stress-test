@@ -1,0 +1,22 @@
+---
+interface Props {
+  template?: string;
+}
+const { template } = Astro.props;
+
+import EsiInclude from "@components/Esi/EsiInclude.astro";
+---
+
+<EsiInclude src="include/common/head.astro" />
+
+{
+  template === "Homepage" ? (
+    <EsiInclude src="include/custom/home/head.astro" />
+  ) : null
+}
+
+{
+  template === "Detail" ? (
+    <EsiInclude src="include/custom/detail/head.astro" />
+  ) : null
+}

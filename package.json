@@ -10,8 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.10.15",
-    "swiper": "^11.0.4"
+    "astro": "^2.10.15"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.2",
@@ -23,9 +22,11 @@
     "postcss-clean": "^1.2.0",
     "postcss-import": "^15.1.0",
     "postcss-mixins": "^9.0.4",
+    "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.2.0",
     "postcss-simple-vars": "^7.0.1",
     "postcss-sort-media-queries": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "xmldom": "^0.6.0"
   }
 }

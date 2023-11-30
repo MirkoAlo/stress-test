@@ -3,15 +3,19 @@ import { getEsi } from "@utils/*";
 
 const isDev = import.meta.env.DEV;
 
-const { src } = Astro.props;
+const { src, props } = Astro.props;
 
-const posts = await Astro.glob("../pages/include/**/*.astro");
+const styles = import.meta.glob("../../css/**/*.css", { query: "?inline" });
 
-const BASE = "https://www.repstatic.it/nazionale/2024/";
+const posts = await Astro.glob("../../pages/include/**/*.astro");
+
+const BASE = "https://www.repstatic.it/nazionale/2024";
+
+const regex = new RegExp(/https?:\/\/|www./, "g");
 ---
 
 {
-  !src.includes("https:") ? (
+  !regex.test(src) ? (
     isDev ? (
       posts.map((component) =>
         component.default.moduleId?.includes(src) ? <component.default /> : null
@@ -26,7 +30,7 @@ const BASE = "https://www.repstatic.it/nazionale/2024/";
     )
   ) : (
     <Fragment
-      set:html={isDev ? getEsi(src) : `<esi:include src="${BASE}/${src}" />`}
+      set:html={isDev ? getEsi(src) : `<esi:include src="test/${src}" />`}
     />
   )
 }

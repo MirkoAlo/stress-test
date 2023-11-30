@@ -10,6 +10,9 @@
 /* 2. Import partials */
 @import '_partial';
 
+/* 3. Import slim-header */
+@import '_slim-header.css';
+
 /*
 // ----------------------------------
 // 🧑‍🚀 Gedi DS - Common Ends

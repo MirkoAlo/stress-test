@@ -1,13 +1,10 @@
 ---
 import Base from "@template/Base.astro";
-import "@css/home/home.css";
 
-import EsiInclude from "../../components/EsiInclude.astro";
+import EsiInclude from "@components/Esi/EsiInclude.astro";
 ---
 
 <Base title="Homepage">
-  <EsiInclude src="include/custom/economia/header/Header.astro" />
-
   <script>
     import { home } from "@js/home/home";
     console.log(home());

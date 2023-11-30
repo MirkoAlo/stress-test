@@ -1,0 +1,44 @@
+---
+import detailStyle from "@css/detail/detail.css?inline";
+---
+
+<style is:inline set:html={detailStyle}></style>
+
+<!-- include/detail/head -->
+<script
+  async
+  src="//www.repstatic.it/minify/sites/repubblica/nazionale/2020-v1/config.cache.php?name=detail_js"
+></script>
+
+<script is:inline>
+window.gdwc = window.gdwc || [];
+</script>
+<script
+  defer
+  src="https://webcomponent.gedidigital.it/gdwc-loader/js/gdwc-loader.js"
+></script>
+
+<script
+  async
+  src="https://www.repstatic.it/minify/sites/repubblica/video/config_video_2018_vanilla.cache.php?name=video_js&kwait=false"
+></script>
+
+<script is:inline>
+(function () {
+  var pwLibrary;
+  if (!window.facet || window.facet != "True") {
+    window.kwait.deps["pw_js"] = ["social_js"];
+    pwLibrary =
+      "//www.repstatic.it/minify/sites/repubblica/nazionale/2020-v1/config.cache.php?name=pw_js";
+  } else {
+    window.kwait.deps["app_js"] = ["social_js"];
+    pwLibrary =
+      "//www.repstatic.it/minify/sites/repubblica/nazionale/2020-v1/config.cache.php?name=app_js";
+  }
+  var script = document.createElement("script");
+  script.async = true;
+  script.src = pwLibrary;
+  document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+<!-- #end include/detail/head -->

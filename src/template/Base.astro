@@ -4,6 +4,8 @@ interface Props {
 }
 const { title } = Astro.props;
 import "@css/common/common.css";
+import EsiInclude from "@components/Esi/EsiInclude.astro";
+import Head from "@page/include/common/commonHead.astro";
 ---
 
 <html lang="it">
@@ -13,8 +15,14 @@ import "@css/common/common.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content="{Astro.generator}" />
     <title>{title} - Gedi Design System</title>
+    <Head template={title} />
   </head>
   <body>
+    {
+      title != "Index" ? (
+        <EsiInclude src="/include/common/slim-header.astro" />
+      ) : null
+    }
     <slot />
   </body>
 </html>

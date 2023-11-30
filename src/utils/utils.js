@@ -27,9 +27,7 @@ const getEsi = async (url) => {
 
     const response = await esiResponse;
 
-    const html = new DOMParser().parseFromString(response, 'text/xml')
-
-    return isDev ? html : include
+    return isDev ? response : include
 }
 
 export { getFileName, getEsi }
