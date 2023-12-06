@@ -473,4 +473,37 @@ summary::-webkit-details-marker,
 .rep-slim-header__menu-button{padding:10px 16px}
 .rep-slim-header__user #account-data-container{padding:10px 16px;width:56px;height:44px}
 .rep-slim-header__user .header-logged-link{right:0;left:auto;width:100px}
+}/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Home Custom CSS
+// ----------------------------------
+*/
+
+body {
+    position: relative;
+    height: 100%;
+    color: green;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
 }
+
+.swiper {
+  width: 50%;
+}
+
+.card img {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  display:none;
+  position: relative;
+ 
+}
+
+
+

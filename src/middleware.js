@@ -39,7 +39,7 @@ function getStyle(response, context) {
 
     let fileName = getFileName(context.url.pathname)
 
-    let regexp = new RegExp(/<style[\w="'\s-]*>(.*?)<\/\s*style>/g);
+    let regexp = new RegExp(/(<style\b[^<>]*>[\s\S]*?<\/style\s*>)|(<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>)/gi);
 
     let obj = {
       assetName: fileName.length != '0' ? fileName : 'index',
@@ -48,11 +48,10 @@ function getStyle(response, context) {
 
     writeFile(obj);
 
-    let styleRoot = `../css/${obj.assetName}/${obj.assetName}.css`;
+    //let styleRoot = `../css/${obj.assetName}/${obj.assetName}.css`;
+    //let stylesheet = `<link rel="stylesheet" type="text/css" href="${styleRoot}" />`;
 
-    let stylesheet = `<link rel="stylesheet" type="text/css" href="${styleRoot}" />`;
-
-    return response.replace(/<style\b[^<>]*>[\s\S]*?<\/style\s*>/gi, stylesheet);
+    return response.replace(regexp, '');
   } else {
     return response
   }
