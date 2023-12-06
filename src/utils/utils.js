@@ -1,5 +1,4 @@
 import ESI from "nodesi";
-import { DOMParser } from 'xmldom'
 
 
 var esi = new ESI({

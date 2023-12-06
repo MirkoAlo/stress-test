@@ -473,4 +473,12 @@ summary::-webkit-details-marker,
 .rep-slim-header__menu-button{padding:10px 16px}
 .rep-slim-header__user #account-data-container{padding:10px 16px;width:56px;height:44px}
 .rep-slim-header__user .header-logged-link{right:0;left:auto;width:100px}
+}/*
+// ----------------------------------
+// 🧑‍🚀 Gedi DS - Cronaca Custom CSS
+// ----------------------------------
+*/
+
+body {
+    background: blue;
 }

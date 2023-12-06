@@ -1,15 +1,25 @@
 ---
-import detailStyle from "@css/detail/detail.css?inline";
+// import detailStyle from "@css/detail/detail.css?inline";
+const isDev = import.meta.env.DEV;
 ---
 
-<style is:inline set:html={detailStyle}></style>
+<!-- Detail Head --><!-- ININE BEHAVIOUR <style is:inline set:html={detailStyle}></style> -->{
+  !isDev ? (
+    <>
+      <style>
+        <esi:include src="https://www.repstatic.it/nazionale/2024/css/detail/detail.css" />
+      </style>
+      <script
+        is:inline
+        src="https://www.repstatic.it/nazionale/2024/js/detail/detail.js"
+      />
+    </>
+  ) : (
+    ""
+  )
+}
 
 <!-- include/detail/head -->
-<script
-  async
-  src="//www.repstatic.it/minify/sites/repubblica/nazionale/2020-v1/config.cache.php?name=detail_js"
-></script>
-
 <script is:inline>
 window.gdwc = window.gdwc || [];
 </script>

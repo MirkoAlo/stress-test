@@ -1,1 +1,19 @@
-<!-- Home Head -->
+---
+const isDev = import.meta.env.DEV;
+---
+
+<!-- Home Head -->{
+  !isDev ? (
+    <>
+      <style>
+        <esi:include src="https://www.repstatic.it/nazionale/2024/css/home/home.css" />
+      </style>
+      <script
+        is:inline
+        src="https://www.repstatic.it/nazionale/2024/js/home/home.js"
+      />
+    </>
+  ) : (
+    ""
+  )
+}
